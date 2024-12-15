@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h4
+        class="pt-5 pb-4 text-center text-amber-600 text-5xl hover:font-bold hover:text-amber-100"
+      >
+        Your Next Gadget
+      </h4>
+    </header>
+
+    <main>
+      <section>
+        <div class="search_conainer mx-5 flex justify-center gap-4 pt-6">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Type here"
+            class="input input-bordered input-primary w-full max-w-xs"
+          />
+          <button
+            onclick="handleSearch()"
+            class="btn btn-outline btn-success text-white"
+          >
+            Search
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <div id="loading-spinner" class="text-center my-40 hidden">
+          <span class="loading loading-spinner text-success"></span>
+        </div>
+        <!-- data show -->
+        <div
+          id="main_container"
+          class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 pt-4 mx-5 gap-4"
+        ></div>
+        <div id="show-all-container" class="hidden text-center pt-4">
+          <button onclick="show_all()" class="btn btn-outline btn-success">
+            Show All
+          </button>
+        </div>
+      </section>
+
+      <!-- Open the modal using ID.showModal() method -->
+
+      <dialog id="show_modal" class="modal">
+        <div class="modal-box">
+          <div id="phone_display"></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <footer></footer>
+    <script src="./js/phone.js"></script>
+  </body>
+</html>
